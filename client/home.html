@@ -1,0 +1,65 @@
+<template name="home">
+
+    <head>
+        <title>My first project on meteor</title>
+    </head>
+
+    <body>
+        <div class="container mainContainer" id="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-lg btn-success" disabled="disabled">About me</button>
+                    <br>
+                    <br>
+                    <table>
+                        <tr>
+                            <td> Activity: </td>
+                            <td>Student</td>
+                        </tr>
+                        <tr>
+                            <td>City, country: </td>
+                            <td>Ternopil, Ukraine</td>
+                        </tr>
+                        <tr>
+                            <td>University: </td>
+                            <td>Ternopil National Technical University named after Ivan Puluy</td>
+                        </tr>
+                        <tr>
+                            <td>Faculty: </td>
+                            <td>Computer Information Systems and Software Engineering</td>
+                        </tr>
+                        <tr>
+                            <td>Specialty: </td>
+                            <td>Software Engineering</td>
+                        </tr>
+                        <tr>
+                            <td>Hobbies: </td>
+                            <td>Football, volleyball, bicycle, music</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="col-md-6">
+                    <p>
+                        <button type="button" class="btn btn-lg btn-success" disabled="disabled">{{>me}}</button>
+                    </p>
+                    <p><img src="/111.jpg" alt="Maksymiv Taras" width="205" height="185" class="img-thumbnail">
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div align="center">
+            <h1>My projects:</h1> 
+            {{#each news}}
+            <h2>{{Project}}</h2>
+            <p>{{Description}}</p>
+            {{/each}}
+        </div>
+
+    </body>
+</template>
+
+<template name="me">
+    <p>Maksymiv Taras</p>
+</template>
