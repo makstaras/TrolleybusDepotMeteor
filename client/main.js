@@ -30,6 +30,12 @@ Router.route('home',{
 		
 	path:'/:limit?',
 	template: 'home',
+	layoutTemplate: 'Layout',
+	yieldTemplates: {
+		'Aside' : {to: 'aside'},
+		'Footer' : {to: 'footer'}
+	},
+	
 	data: function() {
 		var news = [{
 			Project:'Information system on C++',
@@ -40,8 +46,11 @@ Router.route('home',{
 			},{
 			Project:'Internet shop on PHP',
 			Description:'pure php'
-			}		
+			}
 		]
 		return {news: news.slice(0,this.params.limit)};
 	}
 });
+
+
+

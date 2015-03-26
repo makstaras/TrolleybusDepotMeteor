@@ -1,3 +1,32 @@
 #container{
 	background-color: #9CEE90;
 }
+
+#foot{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: 25px;
+	background: none repeat scroll 0% 0% #66CC33;
+}
+
+#container{
+	margin-bottom: 0px;
+}
+
+#buttons{
+	background: #66CC33;
+}
+
+#gr1{
+	background: #F8F8F8;
+}
+
+#gr2{
+	background: #FFFFFF;
+}
+
+h4{
+	color: #F8F8F8;
+}

@@ -1,14 +1,9 @@
 <template name="home">
-
-    <head>
-        <title>My first project on meteor</title>
-    </head>
-
-    <body>
         <div class="container mainContainer" id="container">
+        <br>
             <div class="row">
-                <div class="col-md-6">
-                    <button type="button" class="btn btn-lg btn-success" disabled="disabled">About me</button>
+                <div  class="col-md-6">
+                    <button id="buttons" type="button" class="btn btn-lg btn-success" disabled="disabled">About me</button>
                     <br>
                     <br>
                     <table>
@@ -41,7 +36,9 @@
 
                 <div class="col-md-6">
                     <p>
-                        <button type="button" class="btn btn-lg btn-success" disabled="disabled">{{>me}}</button>
+                        <button id="buttons" type="button" class="btn btn-lg btn-success" disabled="disabled">
+                            {{>me}}
+                        </button>
                     </p>
                     <p><img src="/111.jpg" alt="Maksymiv Taras" width="205" height="185" class="img-thumbnail">
                     </p>
@@ -56,10 +53,34 @@
             <p>{{Description}}</p>
             {{/each}}
         </div>
-
-    </body>
+        <br>
+        <br>   
 </template>
 
 <template name="me">
     <p>Maksymiv Taras</p>
+</template>
+
+
+<template name="Layout">
+  <div>
+    {{> yield region="aside"}}
+  </div>
+
+  <div>
+    {{> yield}}
+  </div>
+
+  <div>
+    {{> yield region="footer"}}
+  </div>
+</template>
+
+
+<template name="Aside">
+    <p align="center"><img src="/meteor.jpg" alt="MeteorJS" width="150" height="150" class="img-circle"></p>
+</template>
+
+<template name="Footer">
+    <h4 id="foot" align="center">Ternopil, 2015</h4>
 </template>
