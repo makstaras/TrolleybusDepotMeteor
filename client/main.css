@@ -1,5 +1,6 @@
 #container{
 	background-color: #9CEE90;
+	border-color: #9CEE90;
 }
 
 #foot{
@@ -8,15 +9,12 @@
 	left: 0px;
 	right: 0px;
 	height: 25px;
-	background: none repeat scroll 0% 0% #66CC33;
+	background: none repeat scroll 0% 0% #66CC66;
 }
 
-#container{
-	margin-bottom: 0px;
-}
 
 #buttons{
-	background: #66CC33;
+	background: #66CC66;
 }
 
 #gr1{

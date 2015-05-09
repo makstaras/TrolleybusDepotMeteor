@@ -2,10 +2,10 @@
         <div class="container mainContainer" id="container">
         <br>
             <div class="row">
-                <div  class="col-md-6">
-                    <button id="buttons" type="button" class="btn btn-lg btn-success" disabled="disabled">About me</button>
+                <div  class="col-md-6" align="center">
                     <br>
-                    <br>
+                    <button type="button" class="btn btn-lg btn-success" disabled="disabled">About me</button>
+                    <br><br>
                     <table>
                         <tr>
                             <td> Activity: </td>
@@ -32,20 +32,18 @@
                             <td>Football, volleyball, bicycle, music</td>
                         </tr>
                     </table>
+                    <br>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-3" align="center">
                     <p>
-                        <button id="buttons" type="button" class="btn btn-lg btn-success" disabled="disabled">
-                            {{>me}}
-                        </button>
+                        {{>hello}}
                     </p>
-                    <p><img src="/111.jpg" alt="Maksymiv Taras" width="205" height="185" class="img-thumbnail">
-                    </p>
+                    
                 </div>
             </div>
-
         </div>
+
         <div align="center">
             <h1>My projects:</h1> 
             {{#each news}}
@@ -78,7 +76,7 @@
 
 
 <template name="Aside">
-    <p align="center"><img src="/meteor.jpg" alt="MeteorJS" width="150" height="150" class="img-circle"></p>
+    <p align="center"></p>
 </template>
 
 <template name="Footer">

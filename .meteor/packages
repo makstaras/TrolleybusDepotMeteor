@@ -5,8 +5,12 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
 mrt:bootstrap-3
 mrt:fullcalendar
 iron:router
+accounts-base
+accounts-password
+accounts-ui
+autopublish
+insecure
+alanning:roles
