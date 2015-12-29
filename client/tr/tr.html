@@ -1,0 +1,52 @@
+<template name="tr">
+<h1><p class="text-success" align="center" style="background: #99FF99;">МАРШРУТИ</p></h1>
+
+	<div class="container mainContent">
+		<div class="row">
+			<div class="col-md-4">
+			<div class="page-header">
+				<h2><small>Номер нового маршруту:</small></h2>
+				
+				{{>lists}}
+				<button type="submit" class="btn btn-success btn-block" style='width:150px;'>Карта</button>
+			</div>
+			</div>
+			<div class="col-md-7">
+				{{>todos}}
+			</div>
+		</div>
+	</div>
+
+
+<br><br><br>
+<h1><p class="text-success" align="center" style="background: #99FF99;">ТРОЛЕЙБУСИ</p></h1>
+	<div class="container mainContent">
+		<div class="row">
+	<div class="col-md-4">
+	<form class="form-horizontal" id="trolForm">
+		<h1><small>Назва нового тролейбуса:</small><input class="input-xlarge name" type="text" name="name" value="" id="trolName"></h1>
+		<h1><small>Вид (одно-, двовагонний):</small><input class="input-xlarge name" type="text" name="name" value="" id="trolKind"></h1>
+		<h1><small>Оцінка технічного стану (задовільний, незадовільний):</small><input class="input-xlarge name" type="text" name="name" value="" id="trolMark"></h1>
+		<button type="submit" class="btn btn-success btn-block" style='width:150px;'>Зареєструвати</button>
+	</form>
+	</div>
+	<div class="col-md-7">
+		{{>listtrol}}
+	</div>
+	</div>
+	</div>
+</template>
+
+<template name="listtrol">
+    <div class="container">
+        <div class="row">
+            <br><h2>Наявні тролейбуси:<small></small></h2><br>
+            <div>{{#each trols}}
+            	{{name}}  -  
+            	{{kind}}  -  
+            	{{mark}}
+            	<i class="glyphicon glyphicon-trash deleteTrol"></i><br> 
+            {{/each}}</div>
+        </div>
+    </div>
+</template>

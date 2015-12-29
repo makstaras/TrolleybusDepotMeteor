@@ -2,34 +2,38 @@
         <div class="container mainContainer" id="container">
         <br>
             <div class="row">
-                <div  class="col-md-6" align="center">
+                <div  class="col-md-7" align="center">
                     <br>
-                    <button type="button" class="btn btn-lg btn-success" disabled="disabled">About me</button>
+                    <button type="button" class="btn btn-lg btn-success" disabled="disabled">Загальна інформація</button>
                     <br><br>
                     <table>
                         <tr>
-                            <td> Activity: </td>
-                            <td>Student</td>
+                            <td>Назва: </td>
+                            <td>Тернопільське тролейбусне депо</td>
                         </tr>
                         <tr>
-                            <td>City, country: </td>
-                            <td>Ternopil, Ukraine</td>
+                            <td>Країна: </td>
+                            <td>Україна</td>
                         </tr>
                         <tr>
-                            <td>University: </td>
-                            <td>Ternopil National Technical University named after Ivan Puluy</td>
+                            <td>Місто: </td>
+                            <td>Тернопіль</td>
                         </tr>
                         <tr>
-                            <td>Faculty: </td>
-                            <td>Computer Information Systems and Software Engineering</td>
+                            <td>Адреса: </td>
+                            <td>вул. Тролейбусна, 7</td>
                         </tr>
                         <tr>
-                            <td>Specialty: </td>
-                            <td>Software Engineering</td>
+                            <td>Телефон: </td>
+                            <td>43-63-62</td>
                         </tr>
                         <tr>
-                            <td>Hobbies: </td>
-                            <td>Football, volleyball, bicycle, music</td>
+                            <td>Вартість проїзду: </td>
+                            <td>1,50 грн (повний), 1 грн (пільговий)</td>
+                        </tr>
+                        <tr>
+                            <td>Перша тролейбусна мережа в Тернополі: </td>
+                            <td>1976 рік</td>
                         </tr>
                     </table>
                     <br>
@@ -45,7 +49,7 @@
         </div>
 
         <div align="center">
-            <h1>My projects:</h1> 
+            <h1>Ти зможеш знайти інформацію про:</h1> 
             {{#each news}}
             <h2>{{Project}}</h2>
             <p>{{Description}}</p>
@@ -56,7 +60,7 @@
 </template>
 
 <template name="me">
-    <p>Maksymiv Taras</p>
+    <p>Депо міста Тернопіль</p>
 </template>
 
 
@@ -80,5 +84,5 @@
 </template>
 
 <template name="Footer">
-    <h4 id="foot" align="center">Ternopil, 2015</h4>
+    <h4 id="foot" align="center">Тернопіль, 2015</h4>
 </template>

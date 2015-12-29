@@ -1,10 +1,33 @@
 Meteor.methods({
     'submitPost': function(title, body) {
-        console.log(title);
-        console.log(body);
+       // console.log(title);
+       // console.log(body);
         Blogs.insert({
             title: title,
-            body: body
+            body: body,
+           // comment: comment
+        });
+    },
+
+'submitTrol': function(name, kind, mark) {
+       // console.log(title);
+       // console.log(body);
+        Trol.insert({
+            name: name,
+            kind: kind,
+            mark: mark,
+        });
+    },
+
+   'submitWork': function(date, name, route, trolley) {
+       // console.log(title);
+       // console.log(body);
+        Work.insert({
+            date: date,
+            name: name,
+            route: route,
+            trolley: trolley,
+           // comment: comment
         });
     },
 
@@ -42,11 +65,11 @@ Meteor.methods({
 Meteor.startup(function() {
     if (Meteor.users.find().fetch().length === 0) {
         var users = [{
-            name: 'Customer Service',
+            name: 'Користувач',
             email: 'cs@home.com',
             roles: ['view-projects']
         }, {
-            name: 'Admin Super User',
+            name: 'Адміністратор',
             email: 'admin@home.com',
             roles: ['admin']
         }];

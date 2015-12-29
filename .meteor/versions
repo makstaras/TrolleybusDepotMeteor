@@ -47,6 +47,7 @@ mongo@1.1.0
 mrt:bootstrap-3@0.3.8
 mrt:fullcalendar@1.6.1
 mrt:jquery-ui@1.9.2
+mrt:jquery-ui-bootstrap@1.8.16
 npm-bcrypt@0.7.8_1
 observe-sequence@1.0.5
 ordered-dict@1.0.3

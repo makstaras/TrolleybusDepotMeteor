@@ -1,15 +1,16 @@
 <head>
-    <title>My first project on meteor</title>
+    <title>Тролейбусне депо</title>
 </head>
+
+
 
 <body id="gr1">
 
-    <div class="container" align="center">
-        <p><h1>Welcome to </h1> <img src="/meteor.jpg" alt="MeteorJS" width="150" height="150" class="img-circle"></p>
+    <div id="header">
+        <img src="/head3.jpg" alt="Ternopil trolleybus" width="1288" height="150">
     </div>
 
-
-
+{{#if isInRole 'admin'}}
     <nav class="navbar navbar-default">
         <div class="container-fluid" id="gr2">
             <div class="navbar-header">
@@ -18,8 +19,12 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="/post">Blog</a></li>
-                    <li><a href="/calendar">Calendar</a></li>
+                    <li><a href="/post">Новини</a></li>
+                    <li><a href="/calendar">Календар</a></li>
+                    <li><a href="/work">Наряди</a></li>
+                    <li><a href="/tr">Тролейбуси і маршрути</a></li>
+                    <li><a href="/gallery">Галерея</a></li>
+                    
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>{{>loginButtons}}</li>
@@ -28,27 +33,56 @@
             </div>
         </div>
     </nav>
+     
+
+    {{else}}
+    <nav class="navbar navbar-default">
+        <div class="container-fluid" id="gr2">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">{{>me}}</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/userpost">Новини</a></li>
+                    <li><a href="/gallery">Галерея</a></li>
+                    <li><a href="/tr">Маршрути</a></li>
+                    
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>{{>loginButtons}}</li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    {{/if}}
+
+    
       
 </body>
+
+
+
 
 <template name="blog">
     <div class="row">
         <form class="form-horizontal" id="blogForm">
             <div class="form-group">
-                <label for="inputTitle" class="col-sm-3 control-label">Title</label>
+                <label for="inputTitle" class="col-sm-3 control-label">Заголовок</label>
                 <div class="col-sm-6">
-                    <input type="text" id="blogTitle" class="form-control" placeholder="Title of our post">
+                    <input type="text" id="blogTitle" class="form-control" placeholder="">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputBody" class="col-sm-3 control-label">Body</label>
+                <label for="inputBody" class="col-sm-3 control-label">Текст</label>
                 <div class="col-sm-6">
                     <textarea class="form-control" id="blogBody" rows="3"></textarea>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
-                    <button type="submit" class="btn btn-success btn-block">Submit post</button>
+                    <button type="submit" class="btn btn-success btn-block">Опублікувати</button>
                 </div>
             </div>
         </form>
@@ -61,7 +95,7 @@
             {{#each blogs}}
             <h2>{{title}}</h2>
             <p>{{body}}</p>
-            <button type="button" class="btn btn-danger deletePost" data-dismiss="modal">Delete</button>
+            <button type="button" class="btn btn-danger deletePost" data-dismiss="modal">Видалити</button>
             {{/each}}
         </div>
     </div>
@@ -81,17 +115,17 @@
             <div class="modal-content">
                 <div id="buttons" class="modal-header">
                     <button type="button" class="close closeDialog" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Edit Event</h4>
+                    <h4 class="modal-title">Техогляд</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" class="form-control" id="title" placeholder="Enter a Title" value="{{title}}">
+                        <label for="title">Опис</label>
+                        <input type="text" class="form-control" id="title" value="{{title}}">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger delete" data-dismiss="modal">Delete</button>
-                    <button type="button" class="btn btn-success updateTitle">Save</button>
+                    <button type="button" class="btn btn-danger delete" data-dismiss="modal">Видалити</button>
+                    <button type="button" class="btn btn-success updateTitle">Зберегти</button>
                 </div>
             </div>
         </div>
@@ -106,16 +140,16 @@
     {{#if isInRole 'admin'}}
     <div>
         <div class="panel panel-default" id="container">
-            <div class="panel-heading" id="container">
+            <div class="panel-heading" id="container" align="center">
                 <button type="button" class="btn btn-lg btn-success" disabled="disabled">
                     {{>me}}
                 </button>
             </div>
             <p>
-                <img src="/111.jpg" alt="Maksymiv Taras" width="265" height="240" class="img-thumbnail">
+                <a href="/tr"><img src="/grafiky.jpg" alt="Maksymiv Taras" class="img-thumbnail"></a>
             </p>       
             <div class="panel-footer">
-                <h5 class="panel-title" align="center">with photo</h5>
+                <h5 class="panel-title" align="center">Схеми руху маршрутів</h5>
             </div>
         </div>
     </div>
@@ -131,9 +165,23 @@
             </div>
             <p></p>
             <div class="panel-footer">
-                <h5 class="panel-title" align="center">without photo</h5>
+                <h5 class="panel-title" align="center"></h5>
             </div>
         </div>
     </div>
     {{/if}}
+</template>
+
+<template name="userpost">
+    <p align="center">
+        <div class="container">
+            <div class="row" id="container">
+              {{#each blogs}}
+                <h2>{{title}}</h2>
+                <p>{{body}}</p>
+              {{/each}}
+            </div>
+        </div>
+
+    </p>  
 </template>

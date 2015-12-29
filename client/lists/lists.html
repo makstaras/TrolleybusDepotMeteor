@@ -1,0 +1,11 @@
+<template name="lists">
+<ul class="lists nav nav-pills nav-stacked">
+<p><input class="name input-medium" type="text" name="name" value="" id="name"></p>
+{{#each lists}}
+{{>listitem}}
+{{/each}}
+</ul>
+</template>
+<template name="listitem">
+<li class="list"><a href="#">{{name}}<span class="glyphicon glyphicon-trash removelist"></span></a></li>
+</template>

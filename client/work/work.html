@@ -1,0 +1,58 @@
+<template name="work">
+
+    <div class="col-md-6">
+        <div class="container">
+            <div class="row">
+                <h1 style="background: #99FF99;">Наявні маршрути:</h1> {{>lists}}
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <h1 style="background: #99FF99;">Наявні тролейбуси:<small></small></h1>
+                <br>
+                <div>{{#each trols}} 
+                    {{name}} - {{kind}}<br> 
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="container">
+            <h1 style="background: #99FF99;">Список всіх водіїв депо:<small></small></h1> Борис Мельник
+            <br> Анатолій Борщ
+            <br> Олег Сергійчук
+            <br> Петро Куций
+            <br> Павло Драгоманов
+            <br> Олег Трибрат
+            <br> Олексій Семенюк
+            <br> Денис Сорока
+            <br> Віталій Дубовий
+            <br> Павло Драгущак
+            <br> Степан Малик
+        </div>
+
+        <div>
+            <br><h1 style="background: #99FF99;">Призначення наряду:<small></small></h1>
+            <form class="form-horizontal" id="wForm">
+                <input class="input-xlarge name" type="text" placeholder="Дата" name="name" value="" id="wDate">
+                <input class="input-xlarge name" type="text" placeholder="Водій" name="name" value="" id="wName">
+                <br>
+                <input class="input-xlarge name" type="text" placeholder="Маршрут" name="name" value="" id="wRoute">
+                <input class="input-xlarge name" type="text" placeholder="Тролейбус" name="name" value="" id="wTrol">
+                <br>
+                <button type="submit" class="btn btn-success btn-block" style='width:320px;'>Призначити</button>
+            </form>
+            {{#each works}} {{date}} - {{name}} - {{route}} - {{trolley}}
+            <span class="glyphicon glyphicon-trash deleteWork"></span>
+            <br> {{/each}}
+        </div>
+    </div>
+
+</template>
+
+<template name="listitem">
+    <li class="list"><a href="#">{{name}}</a></li>
+</template>

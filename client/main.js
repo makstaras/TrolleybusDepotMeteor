@@ -46,7 +46,7 @@ if (Meteor.isClient) {
                 var calendarEvent = {};
                 calendarEvent.start = date;
                 calendarEvent.end = date;
-                calendarEvent.title = 'New Event';
+                calendarEvent.title = 'Техогляд';
                 calendarEvent.owner = Meteor.userId();
                 Meteor.call('saveCalEvent', calendarEvent);
             },
@@ -92,6 +92,7 @@ if (Meteor.isClient) {
         return Blogs.find();
     }
 
+
     Template.listblogs.events({
         'click .deletePost': function(evt, tmpl) {
             Blogs.remove(this._id);
@@ -99,4 +100,24 @@ if (Meteor.isClient) {
 
     });
 
+
+//USERPOST
+    Template.userpost.blogs = function() {
+        return Blogs.find();
+    }
+
+Template.userpost.events({
+        'submit #blogForm': function(e) {
+            e.preventDefault();
+            var comment = $('#blogComment').val();
+            if (comment.length) {
+                Meteor.call('submitComment', comment)
+            }
+        }
+    })
+
+
+
+    // WORK TROLLEYBUSES
+  
 }
